@@ -25,7 +25,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -44,9 +44,7 @@ repositories {
 dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0')
     implementation project(':liteapp')
     //implementation 'com.github.qingmei2:QrCodeScannerView-Android:1.1.2'
     implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'

@@ -17,6 +17,7 @@
  */
 package com.iqiyi.halberd.liteapp.export;
 
+import androidx.annotation.Keep;
 import androidx.collection.LongSparseArray;
 
 /**
@@ -24,6 +25,7 @@ import androidx.collection.LongSparseArray;
  * using this bridge function to inject as property of a javascript object
  **/
 @SuppressWarnings("unused")
+@Keep
 public class JsObject {
     /** if this js object is disposed */
     public boolean disposed;

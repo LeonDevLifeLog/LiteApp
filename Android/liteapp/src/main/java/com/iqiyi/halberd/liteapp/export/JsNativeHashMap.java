@@ -17,6 +17,8 @@
  */
 package com.iqiyi.halberd.liteapp.export;
 
+import androidx.annotation.Keep;
+
 import java.util.HashMap;
 
 /**
@@ -24,6 +26,7 @@ import java.util.HashMap;
  *
  */
 @SuppressWarnings("unused")
+@Keep
 public class JsNativeHashMap extends HashMap<String, Object> {
     public void set(String k, double val) {
         if (null != k) {
