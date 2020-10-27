@@ -17,7 +17,7 @@
  */
 package com.iqiyi.halberd.liteapp.api.provider;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.iqiyi.halberd.liteapp.LiteAppFragmentActivity;

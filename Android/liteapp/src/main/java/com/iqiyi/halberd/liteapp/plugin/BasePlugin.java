@@ -37,6 +37,7 @@ public abstract class BasePlugin implements IBridgeEventListener, LiteAppContext
      * Using this function to do something when context started , just like
      * {@link com.iqiyi.halberd.liteapp.export.DefaultFunctionProvider}
      * */
+    @Override
     public void invalid(LiteAppContext context){
         //do noting by default
     }

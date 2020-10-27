@@ -17,10 +17,11 @@
  */
 package com.iqiyi.halberd.demo.impl;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import com.iqiyi.halberd.demo.R;
 import com.iqiyi.halberd.demo.impl.manager.LiteAppFrameworkManager;

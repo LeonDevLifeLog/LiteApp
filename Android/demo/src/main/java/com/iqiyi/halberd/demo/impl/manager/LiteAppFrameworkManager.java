@@ -18,10 +18,11 @@
 package com.iqiyi.halberd.demo.impl.manager;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.iqiyi.halberd.liteapp.utils.LogUtils;
 
@@ -65,7 +66,7 @@ public class LiteAppFrameworkManager {
         if(liteAppDefaultVersion!=null){
             return liteAppDefaultVersion;
         }
-        SharedPreferences sp = context.getSharedPreferences(global_SP, Activity.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences(global_SP, AppCompatActivity.MODE_PRIVATE);
         String cachedVersion = sp.getString(managerFrameworkCacheStatus,"");
         if(TextUtils.isEmpty(cachedVersion)){
             //when first installed use default version with package, default version
@@ -82,7 +83,7 @@ public class LiteAppFrameworkManager {
     @SuppressLint("ApplySharedPref")
     public void setDefaultFrameworkVersion(Context context, String version){
         liteAppDefaultVersion = version;
-        SharedPreferences sp = context.getSharedPreferences(global_SP, Activity.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences(global_SP, AppCompatActivity.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(managerFrameworkCacheStatus, version).commit();
     }

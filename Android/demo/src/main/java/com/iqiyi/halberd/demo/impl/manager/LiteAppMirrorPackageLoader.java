@@ -17,11 +17,12 @@
  */
 package com.iqiyi.halberd.demo.impl.manager;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -48,7 +49,7 @@ public class LiteAppMirrorPackageLoader {
     private static final String MIRROR_VALIDATED_KEY = "MIRROR_VALIDATED_KEY";
 
     public static void validateMirror(Context context){
-        SharedPreferences sharedPreferences = context.getSharedPreferences(global_SP, Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(global_SP, AppCompatActivity.MODE_PRIVATE);
         boolean validate = sharedPreferences.getBoolean(MIRROR_VALIDATED_KEY, false);
         if(!validate){
             //not yet
@@ -62,7 +63,7 @@ public class LiteAppMirrorPackageLoader {
     }
 
     public static void clearMirrorPackage(Context context){
-        SharedPreferences sharedPreferences = context.getSharedPreferences(global_SP, Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(global_SP, AppCompatActivity.MODE_PRIVATE);
         sharedPreferences.edit().putBoolean(MIRROR_VALIDATED_KEY, false).apply();
     }
 

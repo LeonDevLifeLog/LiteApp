@@ -17,12 +17,14 @@
  */
 package com.iqiyi.halberd.demo;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.iqiyi.halberd.demo.impl.manager.LiteAppPackageManager;
 import com.iqiyi.halberd.liteapp.api.provider.LiteAppPackageProvider;
 import com.iqiyi.halberd.liteapp.common.BridgeConstant;
 import com.iqiyi.halberd.liteapp.common.LiteAppException;
@@ -31,17 +33,16 @@ import com.iqiyi.halberd.liteapp.context.LiteAppFactory;
 import com.iqiyi.halberd.liteapp.context.LiteAppPage;
 import com.iqiyi.halberd.liteapp.event.BridgeEvent;
 import com.iqiyi.halberd.liteapp.event.impl.EventBridgeImpl;
-import com.iqiyi.halberd.demo.impl.manager.LiteAppPackageManager;
 import com.iqiyi.halberd.liteapp.manager.impl.LiteAppDetail;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DIYLiteAppActivity extends Activity {
+public class DIYLiteAppActivity extends AppCompatActivity {
     FrameLayout liteAppView;
     LiteAppPage contentPage = null;
-    String liteAppID = "mp-iqiyi";
-    String pagePath = "video";
+    String liteAppID = "iqiyi";
+    String pagePath = "index";
     LiteAppDetail liteAppDetail;
 
     @Override

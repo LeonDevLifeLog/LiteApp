@@ -20,7 +20,7 @@ package com.iqiyi.halberd.demo.impl.manager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.iqiyi.halberd.liteapp.api.provider.LiteAppPackageClient;

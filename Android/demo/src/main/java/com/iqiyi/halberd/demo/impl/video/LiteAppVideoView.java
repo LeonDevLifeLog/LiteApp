@@ -17,7 +17,6 @@
  */
 package com.iqiyi.halberd.demo.impl.video;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -36,6 +35,9 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.iqiyi.halberd.liteapp.LiteAppFragmentActivity;
 import com.iqiyi.halberd.liteapp.R;
 import com.iqiyi.halberd.liteapp.exo.LiteAppExoVideoView;
@@ -351,7 +353,7 @@ extra int: 标记的错误类型.
 
     private void setFullScreenMode(){
         isResize = true;
-        Activity topActivity = null;
+        AppCompatActivity topActivity = null;
         if (LiteAppFragmentActivity.topInstance != null) {
             topActivity = LiteAppFragmentActivity.topInstance.get();
         }
@@ -388,13 +390,13 @@ extra int: 标记的错误类型.
         });
     }
 
-    private View getActivityContentView(Activity activity){
+    private View getActivityContentView(AppCompatActivity activity){
         return (View) activity.findViewById(R.id.fragment_loading_progress).getParent();
     }
 
     private void setNormalScreenMode(){
         isResize = true;
-        Activity topActivity = null;
+        AppCompatActivity topActivity = null;
         if (LiteAppFragmentActivity.topInstance != null) {
             topActivity = LiteAppFragmentActivity.topInstance.get();
         }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="30dp"
               android:gravity="bottom"
@@ -53,7 +54,7 @@
         android:id="@+id/fullScreenChange"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/ic_fullscreen_white_24dp"
+        app:srcCompat="@drawable/ic_fullscreen_white_24dp"
         />
 
 </LinearLayout>

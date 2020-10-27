@@ -33,7 +33,7 @@
 
 package com.iqiyi.halberd.liteapp.test.common;
 
-import android.support.test.InstrumentationRegistry;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import java.io.InputStream;
 
@@ -45,7 +45,7 @@ public class TestUtil {
         try {
 
             InputStream inputStream
-                    = InstrumentationRegistry.getContext().getResources().getAssets().open(fileName);
+                    = InstrumentationRegistry.getInstrumentation().getContext().getResources().getAssets().open(fileName);
             int size = inputStream.available();
             byte[] buffer = new byte[size];
             inputStream.read(buffer);

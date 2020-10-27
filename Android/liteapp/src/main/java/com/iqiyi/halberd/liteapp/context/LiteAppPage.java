@@ -47,6 +47,7 @@ public class LiteAppPage extends LiteAppContext{
 
     public static int type = CONTEXT_TYPE_PAGE;
 
+    @Override
     public int getType(){
         return type;
     }
@@ -93,6 +94,7 @@ public class LiteAppPage extends LiteAppContext{
         return this;
     }
 
+    @Override
     void disposeInstance(){
         super.disposeInstance();
         getThread().getHandler().post(new Runnable() {

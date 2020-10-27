@@ -18,7 +18,6 @@
 package com.iqiyi.halberd.demo;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -29,14 +28,16 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.iqiyi.halberd.demo.impl.LiteAppDemoConfig;
-import com.iqiyi.halberd.liteapp.api.LiteAppHelper;
 import com.iqiyi.halberd.demo.impl.manager.LiteAppPackageManager;
+import com.iqiyi.halberd.liteapp.api.LiteAppHelper;
 import com.iqiyi.halberd.liteapp.manager.impl.LiteAppDescription;
 
 import java.util.List;
 
-public class LiteAppListActivity extends Activity {
+public class LiteAppListActivity extends AppCompatActivity {
     ListView listView;
     List<LiteAppDescription> descriptionList;
 

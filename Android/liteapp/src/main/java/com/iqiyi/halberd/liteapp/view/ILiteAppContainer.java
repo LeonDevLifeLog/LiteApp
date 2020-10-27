@@ -17,7 +17,7 @@
  */
 package com.iqiyi.halberd.liteapp.view;
 
-import android.support.annotation.MainThread;
+import androidx.annotation.MainThread;
 import android.view.View;
 import android.widget.FrameLayout;
 

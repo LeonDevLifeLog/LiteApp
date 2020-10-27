@@ -18,10 +18,9 @@
 package com.iqiyi.halberd.liteapp.test.console;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.iqiyi.halberd.liteapp.context.ExecutorManager;
 import com.iqiyi.halberd.liteapp.context.ExecutorManagerNative;
 
 import org.junit.Test;
@@ -39,9 +38,7 @@ public class ConsoleTest {
     @Test
     public void useAppContext() throws Exception {
         // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-        System.loadLibrary("gnustl_shared");
-        System.loadLibrary("icu_common");
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         System.loadLibrary("jsc");
         System.loadLibrary("halberd");
         //startLiteApp();

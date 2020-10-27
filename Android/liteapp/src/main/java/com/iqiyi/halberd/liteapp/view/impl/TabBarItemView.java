@@ -21,7 +21,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -71,6 +71,7 @@ public class TabBarItemView  extends LinearLayout{
         selected = false;
     }
 
+    @Override
     public boolean isSelected(){
         return selected;
     }

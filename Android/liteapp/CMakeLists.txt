@@ -58,7 +58,5 @@ target_link_libraries( # Specifies the target library.
                        # JavaScriptCore
                        # ${CMAKE_CURRENT_SOURCE_DIR}/libs/armeabi-v7a/libjavascriptcoregtk-4.0.so
 
-                       ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libgnustl_shared.so
-                       ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libicu_common.so
                        ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libjsc.so
                        )

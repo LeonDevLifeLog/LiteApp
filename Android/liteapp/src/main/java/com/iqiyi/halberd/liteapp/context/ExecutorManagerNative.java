@@ -43,8 +43,6 @@ public class ExecutorManagerNative {
     public native static long tickTimer(long nativeHandle);
 
     static{
-        System.loadLibrary("gnustl_shared");
-        System.loadLibrary("icu_common");
         System.loadLibrary("jsc");
         System.loadLibrary("halberd");
     }

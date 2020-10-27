@@ -19,7 +19,6 @@ package com.iqiyi.halberd.liteapp.view;
 
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -30,7 +29,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -46,6 +44,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 
 import com.iqiyi.halberd.liteapp.R;
 import com.iqiyi.halberd.liteapp.api.provider.LiteAppTitleBarProvider;
@@ -65,7 +68,7 @@ import java.util.ArrayList;
  * used as lite app activity base theme
  */
 @SuppressWarnings("deprecation")
-public abstract class LiteAppBaseActivity extends Activity {
+public abstract class LiteAppBaseActivity extends AppCompatActivity {
     public static final String TAG = LiteAppBaseActivity.class.getName();
 
     public static final String MINI_PROGRAM_ID = "lite_app_id";
@@ -104,7 +107,7 @@ public abstract class LiteAppBaseActivity extends Activity {
         super.onCreate(savedInstanceState);
         topInstance = new WeakReference<>(this);
         customActionBarHost = findViewById(R.id.lite_app_action_bar_host);
-        defaultActionBar = getActionBar();
+        defaultActionBar = getSupportActionBar();
         initTitle();
     }
 
@@ -264,7 +267,7 @@ public abstract class LiteAppBaseActivity extends Activity {
             if (menuMode == MENU_MODE_LIST) {
                 MenuInflater inflater = getMenuInflater();
                 inflater.inflate(R.menu.menu_mode_list, menu);
-                menu.getItem(0).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+                MenuItemCompat.setShowAsAction(menu.getItem(0), MenuItem.SHOW_AS_ACTION_ALWAYS);
             } else if (menuMode == MENU_MODE_SINGLE) {
                 MenuInflater inflater = getMenuInflater();
                 inflater.inflate(R.menu.menu_mode_single, menu);
@@ -284,7 +287,7 @@ public abstract class LiteAppBaseActivity extends Activity {
                             }
                         }
                         item.setVisible(true);
-                        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+                        MenuItemCompat.setShowAsAction(item, MenuItem.SHOW_AS_ACTION_ALWAYS);
                     } else {
                         item.setVisible(false);
                     }

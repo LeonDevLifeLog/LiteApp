@@ -17,8 +17,8 @@
  */
 package com.iqiyi.halberd.liteapp.export;
 
-import android.support.v4.util.LongSparseArray;
-import android.util.Log;
+import androidx.collection.LongSparseArray;
+
 /**
  * Created by eggizhang@qiyi.com on 2017/9/6.
  * using this bridge function to inject as property of a javascript object

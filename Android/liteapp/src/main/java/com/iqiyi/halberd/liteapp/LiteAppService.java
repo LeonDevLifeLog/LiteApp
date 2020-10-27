@@ -20,8 +20,7 @@ package com.iqiyi.halberd.liteapp;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.util.Log;
+import androidx.annotation.Nullable;
 
 import com.iqiyi.halberd.liteapp.api.LiteAppGlobalConfig;
 import com.iqiyi.halberd.liteapp.api.provider.LiteAppGlobalInitializer;
@@ -30,8 +29,6 @@ import com.iqiyi.halberd.liteapp.common.LiteAppException;
 import com.iqiyi.halberd.liteapp.context.LiteAppFactory;
 import com.iqiyi.halberd.liteapp.plugin.appdata.AppDataPlugin;
 import com.iqiyi.halberd.liteapp.utils.LogUtils;
-
-import java.util.logging.ConsoleHandler;
 
 /**
  * Created by eggizhang@qiyi.com on 2017/8/31.

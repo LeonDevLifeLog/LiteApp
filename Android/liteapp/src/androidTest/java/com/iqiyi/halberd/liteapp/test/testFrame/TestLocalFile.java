@@ -18,9 +18,9 @@
 package com.iqiyi.halberd.liteapp.test.testFrame;
 
 import android.content.Intent;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.util.Log;
 
 import com.iqiyi.halberd.liteapp.api.LiteAppGlobalConfig;
@@ -52,18 +52,18 @@ public class TestLocalFile {
 
     @Before
     public void init() throws Exception {
-        TestConfig.validate(InstrumentationRegistry.getContext());
+        TestConfig.validate(InstrumentationRegistry.getInstrumentation().getContext());
 
         LiteAppGlobalInitializer initializer =
-                LiteAppGlobalConfig.getLiteAppInitializer(InstrumentationRegistry.getContext());
+                LiteAppGlobalConfig.getLiteAppInitializer(InstrumentationRegistry.getInstrumentation().getContext());
         if (initializer != null) {
-            initializer.init(InstrumentationRegistry.getContext());
+            initializer.init(InstrumentationRegistry.getInstrumentation().getContext());
         }
     }
 
     @Test
     public void localZipFile() throws Exception {
-        Intent intent = new Intent(InstrumentationRegistry.getContext(), TestFragmentActivity.class);
+        Intent intent = new Intent(InstrumentationRegistry.getInstrumentation().getContext(), TestFragmentActivity.class);
         intent.putExtra(MINI_PROGRAM_NEED_UPDATE, true);
         intent.putExtra(MINI_PROGRAM_ID, "new_mp_package");
         auth.launchActivity(intent);
@@ -77,10 +77,10 @@ public class TestLocalFile {
     @Test
     public void activityEventTest() throws Exception {
 
-        String initString = AssetsUtils.getFromAssets("test_files/initTest.js", InstrumentationRegistry.getContext());
-        String localTest = AssetsUtils.getFromAssets("test_files/titlePluginTest.js", InstrumentationRegistry.getContext());
+        String initString = AssetsUtils.getFromAssets("test_files/initTest.js", InstrumentationRegistry.getInstrumentation().getContext());
+        String localTest = AssetsUtils.getFromAssets("test_files/titlePluginTest.js", InstrumentationRegistry.getInstrumentation().getContext());
 
-        Intent intent = new Intent(InstrumentationRegistry.getContext(), UIThreadActivity.class);
+        Intent intent = new Intent(InstrumentationRegistry.getInstrumentation().getContext(), UIThreadActivity.class);
         intent.putExtra("initString", initString);
         intent.putExtra("jsString", localTest);
         uiActivity.launchActivity(intent);
@@ -90,9 +90,9 @@ public class TestLocalFile {
 
     @Test
     public void contextEventTest() throws Exception{
-        String localTest = AssetsUtils.getFromAssets("test_files/maxTriggerEventTest.js", InstrumentationRegistry.getContext());
+        String localTest = AssetsUtils.getFromAssets("test_files/maxTriggerEventTest.js", InstrumentationRegistry.getInstrumentation().getContext());
 
-        LiteAppContext context = LiteAppContext.createInstance(InstrumentationRegistry.getContext(), null);
+        LiteAppContext context = LiteAppContext.createInstance(InstrumentationRegistry.getInstrumentation().getContext(), null);
         ExecutorManager.executeScript(context,localTest);
 
         LiteAppFactory.disposeLiteAppContext(context);

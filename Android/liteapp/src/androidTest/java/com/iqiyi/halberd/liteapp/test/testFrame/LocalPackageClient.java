@@ -19,12 +19,11 @@ package com.iqiyi.halberd.liteapp.test.testFrame;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.support.test.InstrumentationRegistry;
+import androidx.test.platform.app.InstrumentationRegistry;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.iqiyi.halberd.liteapp.manager.impl.LiteAppDescription;
-import com.iqiyi.halberd.liteapp.manager.impl.LiteAppLocalPackageUtils;
 import com.iqiyi.halberd.liteapp.utils.AssetsUtils;
 
 import org.json.JSONException;
@@ -54,7 +53,7 @@ public class LocalPackageClient {
     }
 
     public LiteAppDescription checkPackageUpdate(Context context, String id, String cachedVersion) {
-        String result = AssetsUtils.getFromAssets(id + "/version", InstrumentationRegistry.getContext());
+        String result = AssetsUtils.getFromAssets(id + "/version", InstrumentationRegistry.getInstrumentation().getTargetContext());
 
         if (TextUtils.isEmpty(result)) {
             return null;
@@ -81,7 +80,7 @@ public class LocalPackageClient {
                     if (!file.exists()) {
                         file.mkdirs();
                     }
-                    AssetManager am = InstrumentationRegistry.getContext().getAssets();
+                    AssetManager am = InstrumentationRegistry.getInstrumentation().getTargetContext().getAssets();
                     storeAppFile("base", baseOutPath, am);
 
                     //下载对应的小程序package

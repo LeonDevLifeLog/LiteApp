@@ -17,7 +17,7 @@
  */
 package com.iqiyi.halberd.liteapp.api.provider;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.iqiyi.halberd.liteapp.common.LiteAppException;
 import com.iqiyi.halberd.liteapp.manager.impl.LiteAppDetail;

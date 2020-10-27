@@ -18,15 +18,10 @@
 package com.iqiyi.halberd.liteapp.view.impl;
 
 import android.annotation.SuppressLint;
-import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -38,6 +33,11 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.iqiyi.halberd.liteapp.api.provider.LiteAppPackageProvider;
 import com.iqiyi.halberd.liteapp.common.BridgeConstant;

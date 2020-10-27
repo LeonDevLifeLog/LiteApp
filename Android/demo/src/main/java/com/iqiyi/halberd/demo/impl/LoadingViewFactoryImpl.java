@@ -21,7 +21,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +42,7 @@ import com.iqiyi.halberd.liteapp.plugin.loading.LoadingViewFactory;
 
 class LoadingViewFactoryImpl implements LoadingViewFactory {
 
+    @Override
     public Dialog createLoadingDialog(Context context){
         return new LoadingDialog(context);
     }

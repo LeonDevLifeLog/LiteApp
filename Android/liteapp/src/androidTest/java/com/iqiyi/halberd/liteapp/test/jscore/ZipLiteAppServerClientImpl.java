@@ -23,7 +23,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.iqiyi.halberd.liteapp.manager.impl.LiteAppDescription;
-import com.iqiyi.halberd.liteapp.manager.impl.LiteAppLocalPackageUtils;
+import com.iqiyi.halberd.liteapp.test.testFrame.LiteAppLocalPackageUtils;
 import com.iqiyi.halberd.liteapp.utils.AssetsUtils;
 
 import org.json.JSONException;

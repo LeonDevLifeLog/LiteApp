@@ -23,9 +23,9 @@ import android.graphics.Canvas;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
-import android.support.annotation.MainThread;
-import android.support.annotation.RequiresApi;
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.annotation.MainThread;
+import androidx.annotation.RequiresApi;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -128,6 +128,7 @@ public class WebViewLiteAppContainer implements ILiteAppContainer{
         return mContainerView;
     }
 
+    @Override
     public void onMounted(){
 
     }
@@ -185,6 +186,7 @@ public class WebViewLiteAppContainer implements ILiteAppContainer{
                 }
             }
 
+            @Override
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request){
                 String url = request.getUrl().toString();
@@ -314,6 +316,7 @@ public class WebViewLiteAppContainer implements ILiteAppContainer{
         mainHandler.post(myRunnable);
     }
 
+    @Override
     public void injectCss(String cssPath){
         try {
             if(TextUtils.isEmpty(cssPath)){

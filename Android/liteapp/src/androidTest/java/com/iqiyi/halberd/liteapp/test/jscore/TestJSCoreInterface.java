@@ -18,8 +18,8 @@
 package com.iqiyi.halberd.liteapp.test.jscore;
 
 import android.content.Intent;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.text.TextUtils;
 
 import com.iqiyi.halberd.liteapp.LiteAppFragmentActivity;
@@ -49,7 +49,7 @@ public class TestJSCoreInterface {
     public void testBasicOperationNetwork() throws Exception {
         LiteAppContextInitManager.addLiteAppContextInitProvider(new DefaultFunctionProvider());
 
-        LiteAppContext liteAppContext = LiteAppContext.createInstance(InstrumentationRegistry.getTargetContext(),null);
+        LiteAppContext liteAppContext = LiteAppContext.createInstance(InstrumentationRegistry.getInstrumentation().getTargetContext(),null);
 
         ExecutorManager.executeScript(liteAppContext, "__base__('ds')");
         ExecutorManager.executeScript(liteAppContext, "__base__.console('console called')");
@@ -63,7 +63,7 @@ public class TestJSCoreInterface {
     @Test
     public void testTimer() throws Exception {
         LiteAppContextInitManager.addLiteAppContextInitProvider(new DefaultFunctionProvider());
-        final LiteAppContext liteAppContext = LiteAppContext.createInstance(InstrumentationRegistry.getTargetContext(),null);
+        final LiteAppContext liteAppContext = LiteAppContext.createInstance(InstrumentationRegistry.getInstrumentation().getTargetContext(),null);
         JsObject callbacker = new JsObject(){
             @Override
             protected long onCalled(NativeObjectRef[] callbackHandles, String[] parameters){
@@ -81,24 +81,24 @@ public class TestJSCoreInterface {
     @Test
     public void testThis() throws Exception{
         LiteAppContextInitManager.addLiteAppContextInitProvider(new DefaultFunctionProvider());
-        LiteAppContext liteAppContext = LiteAppContext.createInstance(InstrumentationRegistry.getTargetContext(),null);
+        LiteAppContext liteAppContext = LiteAppContext.createInstance(InstrumentationRegistry.getInstrumentation().getTargetContext(),null);
         ExecutorManager.executeScript(liteAppContext, "setInterval(function(){console.log('timer good');},1000)");
         Thread.sleep(1000000000);
     }
 
     @Test
     public void testNetwork() throws Exception {
-        Intent intent = new Intent(InstrumentationRegistry.getContext(), LiteAppFragmentActivity.class);
+        Intent intent = new Intent(InstrumentationRegistry.getInstrumentation().getContext(), LiteAppFragmentActivity.class);
         //validate basic config
-        LiteAppDemoConfig.validate(InstrumentationRegistry.getContext());
+        LiteAppDemoConfig.validate(InstrumentationRegistry.getInstrumentation().getContext());
 
-        LiteAppHelper.prepareLiteAppPage(InstrumentationRegistry.getContext());
+        LiteAppHelper.prepareLiteAppPage(InstrumentationRegistry.getInstrumentation().getContext());
         Thread.sleep(1000);
 
         intent.putExtra(MINI_PROGRAM_ID, "123" );
         intent.putExtra(MINI_PROGRAM_NEED_UPDATE, false);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        InstrumentationRegistry.getContext().startActivity(intent);
+        InstrumentationRegistry.getInstrumentation().getContext().startActivity(intent);
 
         //LiteAppFactory.disposeLiteAppContext(liteAppContext);
         Thread.sleep(1000000000);

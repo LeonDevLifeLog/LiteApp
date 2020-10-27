@@ -17,7 +17,7 @@
  */
 package com.iqiyi.halberd.liteapp.export;
 
-import android.support.v4.util.LongSparseArray;
+import androidx.collection.LongSparseArray;
 
 import com.iqiyi.halberd.liteapp.context.LiteAppContext;
 
